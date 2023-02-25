@@ -1,7 +1,7 @@
 # Smart Phone Order App using Spring MVC
 This is a simple web-based application for ordering smartphones using Spring MVC. It allows users to browse different smartphone models and place orders for the selected device.
 
-Prerequisites
+#Prerequisites
 
 Java 11 or higher
 Maven 3.6.3 or higher
