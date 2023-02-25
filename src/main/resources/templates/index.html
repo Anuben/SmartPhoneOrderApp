@@ -1,0 +1,150 @@
+
+<!-- Name: Anuben Keshavala
+Subject: COMP303 - Section 002
+Student ID: 301120629 -->
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Online SmartPhone Order Request Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="OrderDetailValidation.js"></script>
+
+</head>
+<body>
+<form th:action="@{showorder}" th:object="${orderDetailForm}" method="post">
+    <div class="form-row">
+        <h2>Online SmartPhone Order Request Form</h2>
+        <p><b>Full Name</b></p>
+        <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" name="firstName">
+            <label>First Name</label>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="middleName">
+            <label>Middle Name</label>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="lastName">
+            <label>Last Name</label>
+        </div>
+        </div>
+        <br>
+        <p><b>E-mail</b></p>
+        <div class="form-group col-md-6">
+            <input type="email" class="form-control" name="email">
+            <label>Email</label>
+        </div>
+        <br>
+        <p><b>Contact Number</b></p>
+        <div class="row">
+        <div class="col">
+            <input type="number" name="areaCode" class="form-control">
+            <label>Area Code</label>
+        </div>
+        <div class="col">
+            <input type="tel" name="contactNumber" class="form-control"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <label>Phone Number</label>
+        </div>
+        </div>
+        <br>
+
+    </div>
+
+    <p><b>Billing Address</b></p>
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" name="streetAddress">
+        <label>Street Address</label>
+    </div>
+    <br>
+    <div class="form-group col-md-6">
+        <input type="text" class="form-control" name="streetAddressLine2">
+        <label>Street Address Line 2</label>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" name="city">
+            <label>City</label>
+        </div>
+        <div class="col">
+            <select name="province" class="form-control">
+                <option selected>Ontario</option>
+                <option>Quebec</option>
+                <option>Nova Scotia</option>
+                <option>New Brunswick</option>
+                <option>Manitoba</option>
+                <option>British Columbia</option>
+                <option>Prince Edward Island</option>
+                <option>Sakatchewan</option>
+                <option>Alberta</option>
+                <option>Newfoundland and Labrador</option>
+            </select>
+            <label>Province</label>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" name="postalCode">
+            <label>Postal Code</label>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" name="country">
+            <label>Country</label>
+        </div>
+    </div>
+    <br>
+
+    <h2>Product Details</h2>
+    <div class="form-group col-md-6">
+        <label>Product#:</label>
+        <input type="number" class="form-control" name="productNumber">
+    </div>
+    <br>
+
+    <div class="form-group col-md-6">
+        <label>Product Brand</label>
+        <select id="first-selection" onchange="updateSecondSelection()" class="form-control" name="phoneBrand">
+            <option value="iPhone">iPhone</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Google">Google</option>
+        </select>
+    </div>
+    <br>
+
+    <div class="form-group col-md-6">
+        <label>Product Model</label>
+        <select id="second-selection" class="form-control" name="phoneModel">
+            <option value="iPhone XR" data-parent="iPhone">iPhone XR</option>
+            <option value="iPhone 11 Pro" data-parent="iPhone">iPhone 11 Pro</option>
+            <option value="Samsung Galaxy 20 Plus" data-parent="Samsung">Samsung Galaxy 20 Plus</option>
+            <option value="Samsung Galaxy S20" data-parent="Samsung">Samsung Galaxy S20</option>
+            <option value="Google Pro" data-parent="Google">Google Pro</option>
+            <option value="Google Pro Max" data-parent="Google">Google Pro Max</option>
+        </select>
+    </div>
+
+    <br>
+    <div class="form-group col-md-6">
+        <label>Product Price</label>
+        <input type="number" class="form-control" name="price">
+    </div>
+    <br>
+    <div class="form-group col-md-6">
+        <label>Quantity</label>
+        <input type="number" class="form-control" name="quantity">
+    </div>
+    <br>
+
+    <button type="submit" class="btn btn-primary" >Submit</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="reset" class="btn btn-primary">Reset</button>
+    <br>
+</form>
+</body>
+</html>

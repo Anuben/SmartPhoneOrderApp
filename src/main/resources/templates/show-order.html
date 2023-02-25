@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>show-order</title>
+</head>
+<body>
+<h2><p th:text=" ' Welcome   '  + ${firstname} + '. '"></p></h2>
+<h3 style="color: red;">Your Order Details are as follows:</h3>
+
+<p th:text=" 'Email Address:  ' + ${email}" style="color: red;"></p>
+<p th:text=" 'Contact Number:  ' + ${contactnumber}" style="color: red;"></p>
+<p th:text=" 'Address:  ' + ${streetaddress} + '  , ' + ${streetaddressline2} + '  , ' + ${city} + '  ,  ' + ${province}" style="color: red;"></p>
+<br>
+<h3>Phone Details.</h3>
+    <p th:text=" ' Phone  Brand: ' + ${phonebrand}" style="color: blue;"></p>
+    <p th:text=" ' Phone  Model: ' + ${phonemodel}" style="color: blue;"></p>
+    <p th:text=" ' Phone  Price: ' + ${productprice}" style="color: blue;"></p>
+    <p th:text=" ' Phone  Quantity: ' + ${quantity}" style="color: blue;"></p>
+    <p th:text=" ' Phone  Total: ' + ${total}" style="color: blue;"></p>
+</body>
+</html>
