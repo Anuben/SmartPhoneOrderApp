@@ -26,18 +26,18 @@ Copy code
 mvn spring-boot:run
 The application should now be accessible in your browser at http://localhost:8080.
 
-Configuration
+Configuration:
 
 You can configure the application by editing the application.properties file in the src/main/resources directory.
 
-Features
+Features:
 
 View a list of available smartphones
 View a list of smart phone models for specific brand
 Add a smartphone to the order 
 Place an order for the selected smartphone(s)
 
-Technologies
+Technologies:
 
 Spring MVC
 Spring Boot
